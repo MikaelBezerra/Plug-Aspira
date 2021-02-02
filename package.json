@@ -1,0 +1,22 @@
+{
+  "name": "AspiraPlug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "certificado.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "blob": "^0.1.0",
+    "fast-xml-parser": "^3.17.6",
+    "form-data": "^3.0.0",
+    "fs": "0.0.1-security",
+    "html-pdf": "^2.2.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
