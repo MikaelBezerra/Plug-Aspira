@@ -1,0 +1,85 @@
+
+  {
+  "cpfCnpj": "82897088000150",
+  "inscricaoMunicipal": "8214100099",
+  "inscricaoEstadual": "1234567850",
+  "razaoSocial": "clover S/A",
+  "nomeFantasia": "clover",
+  "certificado": "5af59d271f6e8f409178fbf3",
+  "simplesNacional": true,
+  "regimeTributario": 1,
+  "incentivoFiscal": true,
+  "incentivadorCultural": true,
+  "regimeTributarioEspecial": 5,
+  "endereco": {
+    "tipoLogradouro": "Avenida",
+    "logradouro": "Duque de Caxias",
+    "numero": "882",
+    "complemento": "17 andar",
+    "tipoBairro": "Zona",
+    "bairro": "Zona 01",
+    "codigoPais": "1058",
+    "descricaoPais": "Brasil",
+    "codigoCidade": "4115200",
+    "descricaoCidade": "Maringá",
+    "estado": "PR",
+    "cep": "87020025"
+  },
+  "telefone": {
+    "ddd": "44",
+    "numero": "30379500"
+  },
+  "email": "empresa@plugnotas.com.br",
+  "nfse": {
+    "ativo": true,
+    "tipoContrato": 0,
+    "config": {
+      "producao": true,
+      "rps": {
+        "serie": "RPS",
+        "numero": 1,
+        "lote": 1
+      },
+      "prefeitura": {
+        "login": "teste",
+        "senha": "teste123"
+      },
+      "email": {
+        "envio": true
+      }
+    }
+  },
+  "nfe": {
+    "ativo": true,
+    "tipoContrato": 0,
+    "config": {
+      "producao": true,
+      "impressaoFcp": true,
+      "impressaoPartilha": true,
+      "serie": 1,
+      "numero": 1,
+      "dfe": {
+        "ativo": true
+      },
+      "email": {
+        "envio": true
+      }
+    }
+  },
+  "nfce": {
+    "ativo": true,
+    "tipoContrato": 0,
+    "config": {
+      "producao": true,
+      "serie": 1,
+      "numero": 1,
+      "email": {
+        "envio": true
+      },
+      "sefaz": {
+        "idCodigoSegurancaContribuinte": "string",
+        "codigoSegurancaContribuinte": "string"
+      }
+    }
+  }
+}
