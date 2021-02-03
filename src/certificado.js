@@ -1,11 +1,11 @@
-'use strict'
-
+/* eslint-disable no-console */
+/* eslint-disable consistent-return */
 const Fs = require('fs')
 const Path = require('path')
 const Axios = require('axios')
 const FormData = require('form-data')
 
-async function uploadCertificate (){
+async function certificado() {
   try {
     const url = 'https://api.sandbox.plugnotas.com.br/certificado'
     const data = new FormData();
@@ -18,8 +18,8 @@ async function uploadCertificate (){
       url,
       method: 'POST',
       data,
-      headers: { 
-        'X-API-KEY': '2da392a6-79d2-4304-a8b7-959572c7e44d', 
+      headers: {
+        'X-API-KEY': '2da392a6-79d2-4304-a8b7-959572c7e44d',
         ...data.getHeaders()
       },
     })
@@ -28,10 +28,10 @@ async function uploadCertificate (){
     console.log(JSON.stringify(response.data))
 
     return response.data
-  } catch(error){
+  } catch (error) {
     console.error(error)
   }
 
 }
 
-uploadCertificate()
+certificado()
