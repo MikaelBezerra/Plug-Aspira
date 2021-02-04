@@ -1,9 +1,10 @@
 const Fs = require("fs")
 const Path = require("path")
 const Axios = require("axios")
+require('dotenv').config()
 
 async function downloadPdf() {
-    const url = "https://api.sandbox.plugnotas.com.br/nfse/pdf/60131b6ed976d9284a6f2427"
+    const url = (process.env.PDF_URL)
     const path = Path.resolve(__dirname, "doc", "code.pdf")
     const whiter = Fs.createWriteStream(path)
 
@@ -11,7 +12,7 @@ async function downloadPdf() {
         url,
         methad: "GET",
         headers: {
-            "x-api-key": "2da392a6-79d2-4304-a8b7-959572c7e44d"
+            "x-api-key": (process.env.MY_SENHA)
         },
         responseType: "stream"
     })

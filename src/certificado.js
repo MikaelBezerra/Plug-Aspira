@@ -4,33 +4,34 @@ const Fs = require('fs')
 const Path = require('path')
 const Axios = require('axios')
 const FormData = require('form-data')
+require('dotenv').config()
 
 async function certificado() {
-  try {
-    const url = 'https://api.sandbox.plugnotas.com.br/certificado'
-    const data = new FormData();
-    const path = Path.resolve(__dirname, 'doc', 'certificado.pfx')
+    try {
+        const url = (process.env.CERTIFIC_URL)
+        const data = new FormData();
+        const path = Path.resolve(__dirname, 'doc', 'certificado.pfx')
 
-    data.append('arquivo', Fs.createReadStream(path));
-    data.append('senha', '123mudar');
+        data.append('arquivo', Fs.createReadStream(path));
+        data.append('senha', '123mudar');
 
-    const response = await Axios({
-      url,
-      method: 'POST',
-      data,
-      headers: {
-        'X-API-KEY': '2da392a6-79d2-4304-a8b7-959572c7e44d',
-        ...data.getHeaders()
-      },
-    })
+        const response = await Axios({
+            url,
+            method: 'POST',
+            data,
+            headers: {
+                'X-API-KEY': (process.env.MY_SENHA),
+                ...data.getHeaders()
+            },
+        })
 
-    console.log(JSON.stringify(response.status))
-    console.log(JSON.stringify(response.data))
+        console.log(JSON.stringify(response.status))
+        console.log(JSON.stringify(response.data))
 
-    return response.data
-  } catch (error) {
-    console.error(error)
-  }
+        return response.data
+    } catch (error) {
+        console.error(error)
+    }
 
 }
 

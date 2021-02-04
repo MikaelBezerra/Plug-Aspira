@@ -1,15 +1,16 @@
 /* eslint-disable no-console */
 /* eslint-disable consistent-return */
 const axios = require("axios");
-const dados = require("./entity/dadonota.json");
+const dados = require("./config/dados_nota.json");
+require('dotenv').config()
 
 async function nota() {
     try {
         const response = await axios({
-            method: "POST", // caso deseje fazer um get dessa nota, e so trocar o post por get.
-            url: "https://api.sandbox.plugnotas.com.br/nfse", // e a crescentar a id: 601309f12ba16d0df5a6a11a na frente do nfse/
+            method: "POST",
+            url: (process.env.NOTA_URL),
             headers: {
-                "x-api-key": "2da392a6-79d2-4304-a8b7-959572c7e44d",
+                "x-api-key": (process.env.MY_SENHA),
             },
             data: dados,
         })

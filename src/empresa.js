@@ -1,15 +1,17 @@
 /* eslint-disable no-console */
 /* eslint-disable consistent-return */
 const axios = require("axios");
-const empresa = require("./entity/dados_empresa.json");
+const empresa = require("./config/dados_empresa.json");
+require('dotenv').config()
+
 
 async function empresas() {
     try {
         const response = await axios({
             method: "POST",
-            url: "https://api.sandbox.plugnotas.com.br/empresa",
+            url: (process.env.EMPRESAS_URL),
             headers: {
-                "x-api-key": "2da392a6-79d2-4304-a8b7-959572c7e44d",
+                "x-api-key": (process.env.MY_SENHA),
             },
             data: empresa,
         })
@@ -23,3 +25,4 @@ async function empresas() {
 }
 
 empresas();
+
