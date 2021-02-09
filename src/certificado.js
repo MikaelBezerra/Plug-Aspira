@@ -4,6 +4,10 @@ const Fs = require('fs')
 const Path = require('path')
 const Axios = require('axios')
 const FormData = require('form-data')
+
+//TODO: Externalizar o config
+//TODO: Colocar senha do certificado no config
+
 require('dotenv').config()
 
 async function certificado() {

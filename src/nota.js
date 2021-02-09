@@ -2,6 +2,9 @@
 /* eslint-disable consistent-return */
 const axios = require("axios");
 const dados = require("./config/dados_nota.json");
+
+//TODO: Externalizar o config
+
 require('dotenv').config()
 
 async function nota() {

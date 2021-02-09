@@ -2,6 +2,9 @@
 /* eslint-disable consistent-return */
 const axios = require("axios");
 const empresa = require("./config/dados_empresa.json");
+
+//TODO: Externalizar o config
+
 require('dotenv').config()
 
 

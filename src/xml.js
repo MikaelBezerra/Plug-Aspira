@@ -1,6 +1,9 @@
 const Fs = require("fs")
 const Path = require("path")
 const Axios = require("axios")
+
+//TODO: Externalizar o config
+
 require('dotenv').config()
 
 async function downloadPdf() {
