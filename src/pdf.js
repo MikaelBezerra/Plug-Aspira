@@ -1,10 +1,12 @@
+/* eslint-disable no-undef */
 const Fs = require("fs")
 const Path = require("path")
 const Axios = require("axios")
-require('dotenv').config()
+const env = require("./config/confi_doc")
+
 
 async function downloadPdf() {
-    const url = (process.env.PDF_URL)
+    const url = (env.Download.P_URL)
     const path = Path.resolve(__dirname, "doc", "code.pdf")
     const whiter = Fs.createWriteStream(path)
 
@@ -12,7 +14,7 @@ async function downloadPdf() {
         url,
         methad: "GET",
         headers: {
-            "x-api-key": (process.env.MY_SENHA)
+            "x-api-key": (env.Token.Senha)
         },
         responseType: "stream"
     })

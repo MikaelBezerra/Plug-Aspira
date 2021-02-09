@@ -4,23 +4,24 @@ const Fs = require('fs')
 const Path = require('path')
 const Axios = require('axios')
 const FormData = require('form-data')
-require('dotenv').config()
+const env = require('./config/confi_doc')
+
 
 async function certificado() {
     try {
-        const url = (process.env.CERTIFIC_URL)
+        const url = (env.Certificate.URL)
         const data = new FormData();
         const path = Path.resolve(__dirname, 'doc', 'certificado.pfx')
 
         data.append('arquivo', Fs.createReadStream(path));
-        data.append('senha', '123mudar');
+        data.append('senha', (env.Certificate.Senha));
 
         const response = await Axios({
             url,
             method: 'POST',
             data,
             headers: {
-                'X-API-KEY': (process.env.MY_SENHA),
+                'X-API-KEY': (env.Token.Senha),
                 ...data.getHeaders()
             },
         })

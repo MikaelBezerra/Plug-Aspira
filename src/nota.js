@@ -2,15 +2,15 @@
 /* eslint-disable consistent-return */
 const axios = require("axios");
 const dados = require("./config/dados_nota.json");
-require('dotenv').config()
+const env = require("./config/confi_doc")
 
 async function nota() {
     try {
         const response = await axios({
             method: "POST",
-            url: (process.env.NOTA_URL),
+            url: (env.Nota.URL),
             headers: {
-                "x-api-key": (process.env.MY_SENHA),
+                "x-api-key": (env.Token.Senha),
             },
             data: dados,
         })

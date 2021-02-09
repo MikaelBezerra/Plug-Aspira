@@ -1,10 +1,10 @@
 const Fs = require("fs")
 const Path = require("path")
 const Axios = require("axios")
-require('dotenv').config()
+const env = require("./config/confi_doc")
 
-async function downloadPdf() {
-    const url = (process.env.XML_URL)
+async function downloadXMl() {
+    const url = (env.Download.X_URL)
     const path = Path.resolve(__dirname, "dodo", "code.xml")
     const whiter = Fs.createWriteStream(path)
 
@@ -12,7 +12,7 @@ async function downloadPdf() {
         url,
         methad: "GET",
         headers: {
-            "x-api-key": (process.env.MY_SENHA)
+            "x-api-key": (env.Token.Senha)
         },
         responseType: "stream"
     })
@@ -25,4 +25,4 @@ async function downloadPdf() {
     });
 }
 
-downloadPdf();
+downloadXMl();
