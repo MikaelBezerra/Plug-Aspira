@@ -6,9 +6,10 @@ const env = require("./config/confi_doc")
 
 async function empresas() {
     try {
+        const url = env.URLSearch.URL_API
         const response = await axios({
             method: "POST",
-            url: (env.Empresa.URL),
+            url: `${url}/empresas`,
             headers: {
                 "x-api-key": (env.Token.senha),
             },
@@ -19,9 +20,8 @@ async function empresas() {
 
         return response.data
     } catch (error) {
-        console.error(error)
+        throw new Error(error)
     }
 }
 
-empresas();
-
+module.exports = empresas

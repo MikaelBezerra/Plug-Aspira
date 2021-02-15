@@ -1,23 +1,20 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable consistent-return */
-const Fs = require('fs')
-const Path = require('path')
 const Axios = require('axios')
 const FormData = require('form-data')
 const env = require('./config/confi_doc')
 
-
-async function certificado() {
+async function certificate({ Arquivo, Senha }) {
     try {
-        const url = (env.Certificate.URL)
+        const url = env.URLSearch.URL_API
         const data = new FormData();
-        const path = Path.resolve(__dirname, 'doc', 'certificado.pfx')
 
-        data.append('arquivo', Fs.createReadStream(path));
-        data.append('senha', (env.Certificate.Senha));
+        data.append('arquivo', Arquivo);
+        data.append('senha', Senha);
 
         const response = await Axios({
-            url,
+            url: `${url}/certificado`,
             method: 'POST',
             data,
             headers: {
@@ -26,14 +23,11 @@ async function certificado() {
             },
         })
 
-        console.log(JSON.stringify(response.status))
-        console.log(JSON.stringify(response.data))
-
         return response.data
     } catch (error) {
-        console.error(error)
+        throw new Error(error)
     }
 
 }
 
-certificado()
+module.exports = certificate

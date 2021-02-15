@@ -19,7 +19,7 @@
     "prettier": "^2.2.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "start": "node ./src/run.js"
   },
   "keywords": [],
   "author": "",
